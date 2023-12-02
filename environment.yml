@@ -1,0 +1,12 @@
+name: aoc-2023
+channels:
+  - defaults
+dependencies:
+  - python=3.11
+  - pytest
+  - typing
+  - jupyterlab
+  - black
+  - mypy
+  - numpy
+prefix: /Users/admin/miniconda3/envs/aoc-2023
