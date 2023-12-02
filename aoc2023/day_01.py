@@ -2,7 +2,7 @@ import re
 from pathlib import Path
 
 from aoc2023 import AOC_DIR
-from .util import print_solutions
+from aoc2023.util import print_solutions
 
 INPUT_FILENAME = AOC_DIR / 'inputs' / '202301_input.txt'
 
