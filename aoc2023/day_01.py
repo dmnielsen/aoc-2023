@@ -2,7 +2,7 @@ import re
 from pathlib import Path
 
 from aoc2023 import AOC_DIR
-from aoc2023.util import print_solutions
+from .util import print_solutions
 
 INPUT_FILENAME = AOC_DIR / 'inputs' / '202301_input.txt'
 
@@ -22,7 +22,7 @@ def parse_input(text: str) -> list[str]:
     return text.split('\n')
 
 
-def extract_instructions(text: str, p: re.Pattern = INSTRUCTION_PATTERN) -> int:
+def extract_instructions(text: str, p: re.Pattern[str] = INSTRUCTION_PATTERN) -> int:
     match = p.findall(text)
     if match:
         first = CONVERT_NUMBERS.get(match[0], match[0])
@@ -50,7 +50,7 @@ def solve_part2(input_: str) -> int:
     return sum(calibration_values)
 
 
-def main(show_solution: bool = True):
+def main(show_solution: bool = True) -> None:
     input_ = load(INPUT_FILENAME)
 
     result1 = solve_part1(input_)
