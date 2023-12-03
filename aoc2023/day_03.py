@@ -1,5 +1,5 @@
-from pathlib import Path
 from collections import defaultdict
+from pathlib import Path
 
 from aoc2023 import AOC_DIR
 from aoc2023.util import print_solutions

@@ -11,6 +11,7 @@ dependencies = [
 ]
 
 [tool.ruff]
+extend-select = ["I"]
 line-length = 120
 indent-width = 4
 
