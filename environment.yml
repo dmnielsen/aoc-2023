@@ -5,8 +5,8 @@ dependencies:
   - python=3.11
   - pytest
   - typing
-  - jupyterlab
-  - black
+  - ipython
+  - ruff
   - mypy
   - numpy
 prefix: /Users/admin/miniconda3/envs/aoc-2023
