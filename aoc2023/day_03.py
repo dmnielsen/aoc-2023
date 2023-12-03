@@ -1,5 +1,4 @@
 from pathlib import Path
-from typing import NamedTuple
 from collections import defaultdict
 
 from aoc2023 import AOC_DIR
@@ -8,11 +7,7 @@ from aoc2023.util import print_solutions
 INPUT_FILENAME = AOC_DIR / "inputs" / "202303_input.txt"
 
 
-class Coords(NamedTuple):
-    x: int
-    y: int
-
-
+Coords = tuple[int, int]
 Part = tuple[list[Coords], int]
 
 
@@ -31,16 +26,16 @@ def parse_input(text: str) -> tuple[list[Part], set[Coords], set[Coords]]:
         for y, point in enumerate(line):
             if point.isnumeric():
                 current_number += point
-                current_number_coords.append(Coords(x, y))
+                current_number_coords.append((x, y))
             else:
                 if current_number:
                     numbers.append((current_number_coords, int(current_number)))
                     current_number, current_number_coords = "", []
 
                 if point != ".":
-                    symbols.update([Coords(x, y)])
+                    symbols.update([(x, y)])
                 if point == "*":
-                    gears.update([Coords(x, y)])
+                    gears.update([(x, y)])
 
         if current_number:
             numbers.append((current_number_coords, int(current_number)))
@@ -51,7 +46,7 @@ def parse_input(text: str) -> tuple[list[Part], set[Coords], set[Coords]]:
 def get_adjacent_coords(point: Coords) -> set[Coords]:
     x, y = point
 
-    adj_points = set(Coords(xx, yy) for xx in [x - 1, x, x + 1] for yy in [y - 1, y, y + 1])
+    adj_points = set((xx, yy) for xx in [x - 1, x, x + 1] for yy in [y - 1, y, y + 1])
     adj_points.remove(point)
     return adj_points
 
