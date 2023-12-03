@@ -3,11 +3,11 @@ from pathlib import Path
 from aoc2023 import AOC_DIR
 from aoc2023.util import print_solutions
 
-INPUT_FILENAME = AOC_DIR / 'inputs' / '${input_filename}'
+INPUT_FILENAME = AOC_DIR / "inputs" / "${input_filename}"
 
 
 def load(filename: Path = INPUT_FILENAME) -> str:
-    with open(filename, 'r') as f:
+    with open(filename, "r") as f:
         return f.read()
 
 
@@ -29,5 +29,5 @@ def main(show_solution: bool = True):
         print_solutions(result1, result2)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
