@@ -4,7 +4,7 @@ from typing import NamedTuple
 from aoc2023 import AOC_DIR
 from aoc2023.util import print_solutions
 
-INPUT_FILENAME = AOC_DIR / 'inputs' / '202302_input.txt'
+INPUT_FILENAME = AOC_DIR / "inputs" / "202302_input.txt"
 
 
 class Handful(NamedTuple):
@@ -14,24 +14,24 @@ class Handful(NamedTuple):
 
 
 def load(filename: Path = INPUT_FILENAME) -> str:
-    with open(filename, 'r') as f:
+    with open(filename, "r") as f:
         return f.read()
 
 
 def parse_input(text: str) -> list[str]:
-    return text.split('\n')
+    return text.split("\n")
 
 
 def parse_handful(text: str) -> Handful:
-    cubes = text.split(', ')
+    cubes = text.split(", ")
     return Handful(**{cube.split()[1]: int(cube.split()[0]) for cube in cubes})
 
 
 def parse_game(text: str) -> tuple[int, list[Handful]]:
-    game_number, subsets = text.split(':')
+    game_number, subsets = text.split(":")
     number = int(game_number.split()[-1])
 
-    subsets = subsets.strip().split(';')
+    subsets = subsets.strip().split(";")
     return number, [parse_handful(subset) for subset in subsets]
 
 
@@ -81,5 +81,5 @@ def main(show_solution: bool = True) -> None:
         print_solutions(result1, result2)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

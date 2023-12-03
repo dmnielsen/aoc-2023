@@ -1,7 +1,7 @@
 from typing import Any
 
 
-def print_solutions(part1: Any = '', part2: Any = '') -> None:
+def print_solutions(part1: Any = "", part2: Any = "") -> None:
     output_str = f"""
 ********************************
 

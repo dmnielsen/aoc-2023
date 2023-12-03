@@ -4,22 +4,22 @@ from pathlib import Path
 from aoc2023 import AOC_DIR
 from aoc2023.util import print_solutions
 
-INPUT_FILENAME = AOC_DIR / 'inputs' / '202301_input.txt'
+INPUT_FILENAME = AOC_DIR / "inputs" / "202301_input.txt"
 
-INSTRUCTION_PATTERN = re.compile(r'(?=(\d|one|two|three|four|five|six|seven|eight|nine))')
+INSTRUCTION_PATTERN = re.compile(r"(?=(\d|one|two|three|four|five|six|seven|eight|nine))")
 
 CONVERT_NUMBERS = {
-    word: i for i, word in enumerate(['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'], start=1)
+    word: i for i, word in enumerate(["one", "two", "three", "four", "five", "six", "seven", "eight", "nine"], start=1)
 }
 
 
 def load(filename: Path = INPUT_FILENAME) -> str:
-    with open(filename, 'r') as f:
+    with open(filename, "r") as f:
         return f.read()
 
 
 def parse_input(text: str) -> list[str]:
-    return text.split('\n')
+    return text.split("\n")
 
 
 def extract_instructions(text: str, p: re.Pattern[str] = INSTRUCTION_PATTERN) -> int:
@@ -37,7 +37,7 @@ def extract_instructions(text: str, p: re.Pattern[str] = INSTRUCTION_PATTERN) ->
 def solve_part1(input_: str) -> int:
     instructions = parse_input(input_)
 
-    pattern = re.compile(r'\d')
+    pattern = re.compile(r"\d")
 
     return sum(extract_instructions(line, pattern) for line in instructions)
 
@@ -60,5 +60,5 @@ def main(show_solution: bool = True) -> None:
         print_solutions(result1, result2)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
