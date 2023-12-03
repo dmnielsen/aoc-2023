@@ -1,7 +1,6 @@
 import pytest
 
 from aoc2023 import day_03 as day
-from aoc2023.day_03 import Coords
 
 
 @pytest.fixture
@@ -20,8 +19,8 @@ def mock_input():
 
 def test_number_is_adjacent_to_symbol():
     expected = False
-    coords = [Coords(x=0, y=5), Coords(x=0, y=6), Coords(x=0, y=7)]
-    symbols = {Coords(x=5, y=5), Coords(x=4, y=3), Coords(x=8, y=3), Coords(x=3, y=6), Coords(x=1, y=3), Coords(x=8, y=5)}
+    coords = [(0, 5), (0, 6), (0, 7)]
+    symbols = {(5, 5), (4, 3), (8, 3), (3, 6), (1, 3), (8, 5)}
     result = day.number_is_adjacent_to_symbol(coords, symbols)
     assert expected == result
 
