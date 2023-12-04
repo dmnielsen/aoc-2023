@@ -6,7 +6,7 @@ from string import Template
 
 import requests
 
-from aoc2023.util import NEW_DAY_TEMPLATE, NEW_TEST_TEMPLATE
+from .util import NEW_DAY_TEMPLATE, NEW_TEST_TEMPLATE
 
 YEAR = 2023
 AOC_BASE_URL = "https://adventofcode.com"

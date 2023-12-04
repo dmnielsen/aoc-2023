@@ -9,4 +9,5 @@ dependencies:
   - ruff
   - mypy
   - numpy
+  - requests
 prefix: /Users/admin/miniconda3/envs/aoc-2023
