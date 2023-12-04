@@ -77,8 +77,6 @@ def solve_part2(input_: str):
 
     return process_cards(cards_to_process, card_tally)
 
-    return
-
 
 def main(show_solution: bool = True):
     input_ = load(INPUT_FILENAME)
