@@ -1,5 +1,6 @@
 from collections import defaultdict
 from pathlib import Path
+from typing import Any
 
 from aoc2023 import AOC_DIR
 from aoc2023.util import print_solutions
@@ -16,7 +17,7 @@ def load(filename: Path = INPUT_FILENAME) -> str:
         return f.read()
 
 
-def parse_input(text: str) -> tuple[list[Part], set[Coords], set[Coords]]:
+def parse_input(text: str) -> tuple[list[Any], set[Coords], set[Coords]]:
     numbers: list[tuple] = []
     symbols = set()
     gears = set()
@@ -104,7 +105,7 @@ def main(show_solution: bool = True) -> None:
     result2 = solve_part2(input_)
 
     if show_solution:
-        print_solutions.print_solutions(result1, result2)
+        print_solutions(result1, result2)
 
 
 if __name__ == "__main__":
