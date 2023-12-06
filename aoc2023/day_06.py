@@ -14,10 +14,10 @@ def load(filename: Path = INPUT_FILENAME) -> str:
 
 
 def parse_input(text: str) -> list[tuple[int, int]]:
-    times, distances = text.strip().split("\n")[:2]
+    parsed =  text.strip().split("\n")
 
-    times = [int(x.group(0)) for x in re.finditer(r"(\d+)", times)]
-    distances = [int(x.group(0)) for x in re.finditer(r"(\d+)", distances)]
+    times = [int(x.group(0)) for x in re.finditer(r"(\d+)", parsed[0])]
+    distances = [int(x.group(0)) for x in re.finditer(r"(\d+)", parsed[1])]
 
     return [(t, d) for t, d in zip(times, distances)]
 
