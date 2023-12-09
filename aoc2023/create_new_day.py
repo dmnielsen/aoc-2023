@@ -13,7 +13,7 @@ AOC_BASE_URL = "https://adventofcode.com"
 FILE_DIR = Path(__file__).parent.absolute()
 # USER_SESSION_ID is found by inspecting session cookie content while logged into AOC
 USER_SESSION_ID = os.environ["AOC_SESSION"]
-USER_AGENT = "adventofcode_working_directories_creator"
+USER_AGENT = "@dmnielsen"
 
 
 def download_input(day: int) -> Path:
