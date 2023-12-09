@@ -28,10 +28,10 @@ def parse_handful(text: str) -> Handful:
 
 
 def parse_game(text: str) -> tuple[int, list[Handful]]:
-    game_number, subsets = text.split(":")
+    game_number, cubes = text.split(":")
     number = int(game_number.split()[-1])
 
-    subsets = subsets.strip().split(";")
+    subsets = cubes.strip().split(";")
     return number, [parse_handful(subset) for subset in subsets]
 
 
